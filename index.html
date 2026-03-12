@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lucas Suder, MD | Anesthesia Medical-Legal Consulting</title>
+  <meta name="description" content="Board-certified anesthesiologist offering medical record review and legal consulting services for attorneys. Based in Maryland." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #1a2744;
+      --navy-light: #243358;
+      --gold:       #c9a84c;
+      --gold-light: #e8c97a;
+      --off-white:  #f8f7f4;
+      --muted:      #6b7280;
+      --border:     #e2e0da;
+      --text:       #1f2937;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.6;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--navy);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      border-bottom: 2px solid var(--gold);
+    }
+
+    .nav-brand {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: 0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--gold-light); }
+
+    /* ── Hero ── */
+    .hero {
+      background: var(--navy);
+      color: #fff;
+      padding: 6rem 2rem 5rem;
+      text-align: center;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(2.25rem, 5vw, 3.5rem);
+      font-weight: 500;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.75);
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.85rem 2.25rem;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .hero-cta:hover { background: var(--gold-light); }
+
+    /* ── Divider ── */
+    .gold-rule {
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      border: none;
+    }
+
+    /* ── Sections ── */
+    section {
+      padding: 5rem 2rem;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    h2 {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    p { color: var(--muted); line-height: 1.75; margin-bottom: 1rem; }
+    p:last-child { margin-bottom: 0; }
+
+    /* ── Credential cards ── */
+    .credentials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    .credential-card {
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+      padding: 1.25rem 1.5rem;
+      background: var(--off-white);
+    }
+
+    .credential-card h3 {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.4rem;
+    }
+
+    .credential-card p {
+      font-size: 0.8rem;
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── Experience table ── */
+    .experience-list {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .exp-item {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      gap: 1rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .exp-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .exp-date {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--muted);
+      padding-top: 0.1rem;
+    }
+
+    .exp-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.25rem;
+    }
+
+    .exp-detail {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* ── Services ── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .service-card {
+      padding: 2rem 1.5rem;
+      border: 1px solid var(--border);
+      background: var(--off-white);
+      text-align: center;
+    }
+
+    .service-icon {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .service-card h3 {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+    }
+
+    .service-card p {
+      font-size: 0.85rem;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* ── Alternating background ── */
+    .bg-off-white { background: var(--off-white); }
+    .bg-off-white section { /* inherits max-width */ }
+    .full-bg { padding: 5rem 2rem; }
+    .full-bg > section { padding: 0; }
+
+    /* ── Contact ── */
+    .contact-wrapper {
+      max-width: 560px;
+      margin: 2rem auto 0;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--navy);
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 0.7rem 0.9rem;
+      border: 1px solid var(--border);
+      background: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: var(--text);
+      border-radius: 2px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--navy);
+    }
+
+    textarea { resize: vertical; min-height: 130px; }
+
+    .form-group-full { margin-bottom: 1rem; }
+
+    .submit-btn {
+      width: 100%;
+      background: var(--navy);
+      color: #fff;
+      border: none;
+      padding: 0.9rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: background 0.2s;
+      margin-top: 0.5rem;
+    }
+
+    .submit-btn:hover { background: var(--navy-light); }
+
+    .form-note {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 1rem;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      border-top: 2px solid var(--gold);
+    }
+
+    footer strong { color: rgba(255,255,255,0.8); }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .form-row { grid-template-columns: 1fr; }
+      .exp-item { grid-template-columns: 1fr; gap: 0.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <span class="nav-brand">Lucas Suder, MD</span>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <div class="hero">
+    <p class="hero-eyebrow">Anesthesia Medical-Legal Consulting</p>
+    <h1>Board-Certified Anesthesiologist.<br>Available for Record Review.</h1>
+    <p>Providing independent, objective medical record review for plaintiff and defense counsel in anesthesia-related cases.</p>
+    <a href="#contact" class="hero-cta">Request a Consultation</a>
+  </div>
+
+  <hr class="gold-rule" />
+
+  <!-- About -->
+  <div id="about">
+    <section>
+      <p class="section-label">About</p>
+      <h2>Clinical Expertise You Can Put on the Stand</h2>
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <img
+          src="professional photo lucas suder 2025.jpg"
+          alt="Lucas Suder, MD"
+          style="width: 160px; height: 160px; object-fit: cover; object-position: top; border-radius: 50%; border: 3px solid var(--gold);"
+        />
+      </div>
+      <p>I am a board-certified anesthesiologist with training at one of the nation's highest-acuity residency programs — LAC+USC Medical Center — and attending experience spanning Level I trauma, high-risk obstetrics, major vascular, neurosurgery, spine, and regional anesthesia.</p>
+      <p style="margin-bottom:0;">My background includes military service as a Captain in the United States Air Force, independent practice across academic medical centers and ambulatory surgery centers, and current participation in hospital quality and operations committees. I bring the same analytical rigor I apply in the operating room to the review of complex medical records.</p>
+
+      <div class="credentials-grid">
+        <div class="credential-card">
+          <h3>Board Certification</h3>
+          <p>American Board of Anesthesiology<br>Certified October 2023</p>
+        </div>
+        <div class="credential-card">
+          <h3>Medical Licensure</h3>
+          <p>Maryland · Virginia · North Carolina · California</p>
+        </div>
+        <div class="credential-card">
+          <h3>Military Service</h3>
+          <p>Captain, United States Air Force<br>Honorably Discharged 2025</p>
+        </div>
+        <div class="credential-card">
+          <h3>Training</h3>
+          <p>LAC+USC Medical Center<br>Anesthesiology Residency 2018–2022</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Services -->
+  <div class="bg-off-white full-bg" id="services">
+    <section>
+      <p class="section-label">Services</p>
+      <h2>How I Can Help Your Case</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">📋</div>
+          <h3>Medical Record Review</h3>
+          <p>Thorough review of anesthesia records, operative notes, and perioperative documentation. Written summary opinion on standard of care with citations to relevant literature and guidelines.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔍</div>
+          <h3>Case Screening</h3>
+          <p>Early-stage review to help plaintiff or defense counsel assess the merits of a case before committing to full litigation. Fast turnaround, flat-rate options available.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📞</div>
+          <h3>Attorney Consultation</h3>
+          <p>Telephone or video consultation to explain anesthesia concepts, review deposition strategy, or help counsel understand the clinical context of a case.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Experience -->
+  <div id="experience">
+    <section>
+      <p class="section-label">Experience</p>
+      <h2>Clinical Background</h2>
+      <p>My experience spans Level I trauma centers, military facilities, academic medical centers, and high-volume ambulatory surgery centers — providing a broad foundation for evaluating the standard of care across practice settings.</p>
+
+      <div class="experience-list">
+        <div class="exp-item">
+          <span class="exp-date">2025 – Present</span>
+          <div>
+            <p class="exp-title">MedStar Southern Maryland Hospital Center</p>
+            <p class="exp-detail">Staff Anesthesiologist · 90% medical direction · Member, OR Operations and Efficiency Committee</p>
+          </div>
+        </div>
+        <div class="exp-item">
+          <span class="exp-date">2025</span>
+          <div>
+            <p class="exp-title">Anne Arundel Medical Center / Doctors Community Medical Center</p>
+            <p class="exp-detail">Staff Anesthesiologist · 95% own cases · Full subspecialty coverage including obstetrics, major vascular, spine, neurosurgery, regional, and pediatrics</p>
+          </div>
+        </div>
+        <div class="exp-item">
+          <span class="exp-date">2022 – 2025</span>
+          <div>
+            <p class="exp-title">Langley Air Force Base — 633d Medical Group</p>
+            <p class="exp-detail">Captain, USAF · Staff Anesthesiologist · Regional, orthopedic, general, ENT, gynecology, pediatrics · Honorably discharged</p>
+          </div>
+        </div>
+        <div class="exp-item">
+          <span class="exp-date">2022 – 2023</span>
+          <div>
+            <p class="exp-title">Portsmouth Naval Medical Center</p>
+            <p class="exp-detail">Staff Anesthesiologist · Level I Trauma Center · All subspecialties including neurosurgery, high-risk OB, vascular, and trauma · Resident supervision</p>
+          </div>
+        </div>
+        <div class="exp-item">
+          <span class="exp-date">2023 – 2025</span>
+          <div>
+            <p class="exp-title">Per Diem — Multiple Facilities</p>
+            <p class="exp-detail">Sentara Albemarle Medical Center · Careplex Orthopedic ASC (up to 25 nerve blocks/day) · Sentara Princess Anne Hospital · Chesapeake Regional Medical Center</p>
+          </div>
+        </div>
+        <div class="exp-item">
+          <span class="exp-date">2018 – 2022</span>
+          <div>
+            <p class="exp-title">LAC+USC Medical Center — Residency</p>
+            <p class="exp-detail">One of the highest-volume, highest-acuity anesthesiology training programs in the United States</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Contact -->
+  <div class="bg-off-white full-bg" id="contact">
+    <section>
+      <p class="section-label">Contact</p>
+      <h2>Inquire About a Case</h2>
+      <p style="text-align:center; max-width: 480px; margin: 0 auto 0;">All inquiries are confidential. I typically respond within one business day.</p>
+
+      <div class="contact-wrapper">
+        <form action="https://formspree.io/f/mdawzdvd" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+            </div>
+            <div class="form-group">
+              <label for="firm">Law Firm</label>
+              <input type="text" id="firm" name="firm" placeholder="Smith & Associates" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="jane@smithlaw.com" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone (optional)</label>
+              <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" />
+            </div>
+          </div>
+          <div class="form-group form-group-full">
+            <label for="case_type">Case Type</label>
+            <select id="case_type" name="case_type">
+              <option value="">Select one</option>
+              <option>Plaintiff — record review</option>
+              <option>Defense — record review</option>
+              <option>Case screening</option>
+              <option>Attorney consultation</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group form-group-full">
+            <label for="message">Brief Case Description</label>
+            <textarea id="message" name="message" placeholder="Briefly describe the case and what you need. No confidential information necessary at this stage."></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Send Inquiry</button>
+          <p class="form-note">This form does not establish an attorney-client or physician-client relationship.</p>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p><strong>Lucas Suder, MD</strong> &nbsp;·&nbsp; Anesthesia Medical-Legal Consulting &nbsp;·&nbsp; Maryland</p>
+    <p style="margin-top: 0.5rem;">© 2026 Lucas Suder, MD. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
